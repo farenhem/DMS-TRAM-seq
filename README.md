@@ -89,12 +89,12 @@ The steps are:
 
 - The per-chromosome, per-sample files from the preceding steps are combined into a single per-sample file.
   ```bash
-  ./GWSA4.sh
+  sbatch GWSA4.sh
   ```
 
 - This step of the pipeline, together with the following step, ensures that sites in the transcriptome are retained for further analysis only if they exhibit adequate coverage (i.e. above the specified threshold) for ALL samples/conditions.
   ```bash
-  ./GWSA5.sh
+  sbatch GWSA5.sh
   ```
 
 - Together with the previous step, ensure consistently high coverage among regions that are to be compared across conditions.
@@ -102,16 +102,17 @@ The steps are:
   ./GWSA6.sh
   ```
 
-- An optional step (NOT recommended, can be skipped entirely) to assess the per-sample distribution of normalized mismatch rates.  These distributions can be used to set a upper bound for a per-sample (as opposed to per-transcript or per-region) Winsorization.
-  ```bash
-  ./GWSA7.sh
-  ```
+# Analyzing the mutational profiles
 
-For now only "canonical" transcripts are considered (i.e. a single annotation
-per transcript) .All of the steps below calculate and report summary statistics
+## Annotation-based analyses (i.e. whole transcript, UTR, etc)
+
+For now only "canonical" transcripts are considered (i.e. a single annotation per transcript) .All of the steps below calculate and report summary statistics
 for different elements of the transcriptome:
-./GWSA8_3utr_assemble.sh # Spliced 3' UTRs.
-./GWSA8_5utr_assemble.sh # Spliced 5' UTRs.
-./GWSA8_cds_assemble.sh # Spliced coding sequences (i.e. excluding UTRs)
-./GWSA8_cds_unspliced.sh # Individual exons (unspliced CDS, UTRs excluded)
-./GWSA8_transcript_assemble.sh # Complete spliced transcripts, including UTRs.
+
+```bash
+sbatch GWSA8_3utr_assemble.sh # Spliced 3' UTRs.
+sbatch GWSA8_5utr_assemble.sh # Spliced 5' UTRs.
+sbatch GWSA8_cds_assemble.sh # Spliced coding sequences (i.e. excluding UTRs)
+sbatch GWSA8_cds_unspliced.sh # Individual exons (unspliced CDS, UTRs excluded)
+sbatch GWSA8_transcript_assemble.sh # Complete spliced transcripts, including UTRs.
+```
