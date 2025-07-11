@@ -9,7 +9,7 @@
 chrom=$1
 winSize=$2
 bgpath=../bedGraph/chrom
-windowpath=../gene_windows
+windowpath=../windows
 ref=../reference_annot/canon_GRCh38.106_all_exons.bed
 
 
