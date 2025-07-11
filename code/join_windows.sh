@@ -10,7 +10,7 @@
 
 windowSize=$1
 
-cd ..
+cd ../windows
 
 echo "gene,ID,type,chr,strand,region,exon,start,end,x,delta,p,r_con1,r_con2,r_between,con1_avg,con2_avg,avg_pval,con1_gini,con2_gini,gini_pval,n,len" | cat - ${windowSize}nt_windows_step_chr1.csv > ${windowSize}nt_windows_step_temp1.csv
 echo "gene,ID,type,chr,strand,region,exon,start,end,x,delta,p,r_con1,r_con2,r_between,con1_avg,con2_avg,avg_pval,con1_gini,con2_gini,gini_pval,n,len" | cat - ${windowSize}nt_windows_slide_chr1.csv > ${windowSize}nt_windows_slide_temp1.csv
