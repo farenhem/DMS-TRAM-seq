@@ -5,8 +5,6 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=16gb
 #SBATCH --partition=20
-#SBATCH --output /lab/jain_imaging/Kelsey/Slurm_out/gene_windows_%j.out
-#SBATCH --error /lab/jain_imaging/Kelsey/Slurm_out/gene_windows_%j.err
 
 chrom=$1
 winSize=$2
