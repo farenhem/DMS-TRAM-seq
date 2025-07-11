@@ -8,9 +8,8 @@
 # to set common sites for all samples.  After this step, sites are tabulated
 # (on positive and negative strands, respectively) are common to all samples.
 
-path=/lab/jain_imaging/Kelsey/Sequencing/20210903_NovaSeq
-jobpath=${path}/ANALYSIS/jobs
-bedGraphpath=${path}/ANALYSIS/bedGraph
+jobpath=../jobs
+bedGraphpath=../bedGraph
 
 # List experiments from non-stress conditions.
 DMS1=D1
