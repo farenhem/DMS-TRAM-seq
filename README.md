@@ -5,6 +5,8 @@ This software will fully analyze DMS-TRAM-seq data, from raw FASTQ files through
 
 Please note, as written, this code is designed to function on a SLURM computing cluster. Modification will be needed to run on another cluster or on a single computer. These updates are in progress.
 
+Installing this software and the required reference data should take about 20 minutes. 
+
 ## Pre-requisites
 
 All software needed for this pipeline is described below, with the version used by the authors described in parentheses. Please install all packages for command-line usage before proceeding.
