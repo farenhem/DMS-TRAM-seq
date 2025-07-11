@@ -41,7 +41,7 @@ Example code to generate STAR reference:
   ```
 
 
-The rest of the reference and annotation documentation, mostly including bed files, that are necessary for the code as written is available at zenodo.org/XXXXXXXXX, including fasta files for all chromosomes, which make the file quite large. Once this zip file has been downloaded from zenodo into the main DMS-TRAM-seq directory:
+The rest of the reference and annotation documentation, mostly including bed files, that are necessary for the code as written is available at https://zenodo.org/records/15865559, including fasta files for all chromosomes, which make the file quite large. Once this zip file has been downloaded from zenodo into the main DMS-TRAM-seq directory:
 
   ```bash
   unzip reference_annot.zip # should be located within DMS-TRAM-seq directory, giving DMS-TRAM-seq/reference_annot/
@@ -49,7 +49,7 @@ The rest of the reference and annotation documentation, mostly including bed fil
 
 ## Downloading sample data
 
-A small sample dataset, subsampled from data presented in the publication, is downloadable from the same Zenodo repository. After downloading into the main DMS-TRAM-seq directory:
+A small sample dataset, subsampled from data presented in the publication, is downloadable from the same Zenodo repository (https://zenodo.org/records/15865559). After downloading into the main DMS-TRAM-seq directory:
 
   ```bash
   unzip FASTQ.zip # should be located within DMS-TRAM-seq directory, giving DMS-TRAM-seq/FASTQ/
