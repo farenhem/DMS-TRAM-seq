@@ -5,9 +5,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=8gb
 #SBATCH --partition=20
-#SBATCH --output /lab/jain_imaging/Kelsey/Slurm_out/window_join_%j.out
-#SBATCH --error /lab/jain_imaging/Kelsey/Slurm_out/window_join_%j.err
-#Add header and combine chromosomes in specified order, both for tsv and csv files. Then, apply p-val correction. 
+
+# Adds header and combine chromosomes in specified order, both for tsv and csv files. Then, apply p-val correction. 
 
 windowSize=$1
 
