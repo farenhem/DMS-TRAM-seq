@@ -127,6 +127,7 @@ for different elements of the transcriptome:
 sbatch GWSA8_3utr_assemble.sh # Spliced 3' UTRs.
 sbatch GWSA8_5utr_assemble.sh # Spliced 5' UTRs.
 sbatch GWSA8_cds_assemble.sh # Spliced coding sequences (i.e. excluding UTRs)
-sbatch GWSA8_cds_unspliced.sh # Individual exons (unspliced CDS, UTRs excluded)
 sbatch GWSA8_transcript_assemble.sh # Complete spliced transcripts, including UTRs.
 ```
+
+Note that this can easily be customized to run on any bed annotation by editing the relevant annotation file names in GWSA8.
