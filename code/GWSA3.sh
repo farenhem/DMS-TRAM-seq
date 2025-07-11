@@ -11,10 +11,9 @@
 # coverage above a specified threshold, implying the same footprint for the
 # normalized rates that are calculated here.
 
-path=/lab/jain_imaging/Kelsey/Sequencing/20210903_NovaSeq
-jobpath=${path}/ANALYSIS/jobs
-pileuppath=${path}/ANALYSIS/pileups
-bedGraphpath=${path}/ANALYSIS/bedGraph
+jobpath=../jobs
+pileuppath=../pileups
+bedGraphpath=../bedGraph
 
 # List experiments from non-stress conditions.
 ctl1=C1
@@ -40,7 +39,7 @@ declare -A pairs=( [${DMS1}]=${ctl1} [${DMS2}]=${ctl2} [${DMS3}]=${ctl3} [${sDMS
 for treat in "${!pairs[@]}"
 do
     ctl=${pairs[${treat}]}
-    for chr in chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr20 chr21 chr22 chrX chrY
+    for chr in chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr20 chr21 chr22 chrX chrY chrM
     do
 	
 	for strand in pos neg
@@ -84,14 +83,12 @@ done
 
 for treat in ${DMS1} ${DMS2} ${DMS3} ${sDMS1} ${sDMS2} ${sDMS3}
 do
-    for chr in chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr20 chr21 chr22 chrX chrY
+    for chr in chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr20 chr21 chr22 chrX chrY chrM
     do
 	for strand in pos neg
 	do
 	    sbatch ${jobpath}/intCoverage_${treat}_${chr}_${strand}.slurm
-	    #sleep 1
 	    sbatch ${jobpath}/normRate_${treat}_${chr}_${strand}.slurm
-	    #sleep 1
 	done
     done
 done
