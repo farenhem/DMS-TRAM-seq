@@ -7,7 +7,7 @@ Please note, as written, this code is designed to function on a SLURM computing 
 
 Installing this software and the required reference data should take about 20 minutes. 
 
-## Pre-requisites
+## Pre-requisite software
 
 All software needed for this pipeline is described below, with the version used by the authors described in parentheses. Please install all packages for command-line usage before proceeding.
 
@@ -26,20 +26,19 @@ bedops (v2.4.37) https://bedops.readthedocs.io/en/latest/
 
 python (v3.8)
 
-## Necessary reference data
+## Downloading necessary reference data
 
-Though several genomic annotation files are included in this repository that are used in the analysis, two large reference datasets are also necessary (the STAR reference genome for hg38 and chromosome-level fasta files for the hg38 genome sequence). You can download these from zenodo.org/XXXXXXXXX, and they were made as described below. Once the zip files have been downloaded from zenodo:
+Though several genomic annotation files are included in this repository that are used in the analysis, two large reference datasets are also necessary (the STAR reference genome for hg38 and chromosome-level fasta files for the hg38 genome sequence).
+
+First, a STAR reference genome for hg38 will need to be built in the directory DMS-TRAM-seq/reference_annot/STAR_hg38. Please follow instructions in the STAR manual at https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf and the reference geome fasta and gtf files can be downloaded from https://www.gencodegenes.org/human/. Only the primary chromosomes are analyzed, so any hg38 version will suffice. Should you already have this STAR reference hg38 built, you can change the "refpath" variable on line 24 of TrimMapDedupProcess.sh to direct there, instead. 
+
+The rest of the reference and annotation documentation, mostly including bed files, that are necessary for the code as written is available at zenodo.org/XXXXXXXXX, including fasta files for all chromosomes, which make the file quite large. Once this zip file has been downloaded from zenodo into the main DMS-TRAM-seq directory:
 
   ```bash
-  unzip STAR_hg38.zip
-  mv STAR_hg38 reference_annot/
-  unzip fasta_hg38.zip
-  mv fasta_hg38 reference_annot/
+  unzip reference_annot.zip # should be located within DMS-TRAM-seq directory, giving DMS-TRAM-seq/reference_annot
   ```
 
 Alternatively, you may generate these files yourself as described below:
-
-First, a STAR reference genome for hg38 will need to be built in the folder DMS-TRAM-seq/STAR_hg38. Please follow instructions in the STAR manual at https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf and the reference geome fasta and gtf files can be downloaded from https://www.gencodegenes.org/human/. Only the primary chromosomes are analyzed, so any hg38 version will suffice. Should you already have this STAR reference hg38 built, you can change the "refpath" variable on line 24 of TrimMapDedupProcess.sh to direct there, instead. 
 
 Second, reference fasta files for each hg38 chromosome will need to be placed in DMS-TRAM-seq/reference_annot/fasta, named chrN.fa.
 
