@@ -3,6 +3,8 @@ This software will fully analyze DMS-TRAM-seq data, from raw FASTQ files through
 
 # Installation
 
+Please note, as written, this code is designed to function on a SLURM computing cluster. Modification will be needed to run on another cluster or on a single computer. These updates are in progress.
+
 ## Pre-requisites
 
 All software needed for this pipeline is described below, with the version used by the authors described in parentheses. Please install all packages for command-line usage before proceeding.
@@ -10,6 +12,7 @@ All software needed for this pipeline is described below, with the version used 
 Cutadapt (v4.8) https://cutadapt.readthedocs.io/en/stable/ 
 
 BBMap (v38.96) (for clumpify) https://github.com/BioInfoTools/BBMap
+**download and place BBMap files into DMS-TRAM-seq/BBMap
 
 STAR (v2.7.1a) https://github.com/alexdobin/STAR
 
@@ -20,6 +23,22 @@ bedtools (v2.29.2) https://bedtools.readthedocs.io/en/latest/
 bedops (v2.4.37) https://bedops.readthedocs.io/en/latest/
 
 python (v3.8)
+
+## Necessary reference data
+
+Though several genomic annotation files are included in this repository that are used in the analysis, two large reference datasets are also necessary. You can download these from zenodo.org/XXXXXXXXX, and they were made as described below. Once the zip files have been downloaded from zenodo:
+
+  ```bash
+  unzip STAR_hg38.zip
+  unzip hg38_fasta.zip
+  mv hg38_fasta reference_annot/
+  ```
+
+Alternatively, you may generate these files yourself as described below:
+
+First, a STAR reference genome for hg38 will need to be built in the folder DMS-TRAM-seq/STAR_hg38. Please follow instructions in the STAR manual at https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf and the reference geome fasta and gtf files can be downloaded from https://www.gencodegenes.org/human/. Only the primary chromosomes are analyzed, so any hg38 version will suffice. Should you already have this STAR reference hg38 built, you can change the "refpath" variable on line 24 of TrimMapDedupProcess.sh to direct there, instead. 
+
+Second, reference fasta files for each hg38 chromosome will need to be placed in DMS-TRAM-seq/reference_annot/fasta.
 
 ## Installation of this software
   
