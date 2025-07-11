@@ -35,12 +35,18 @@ First, a STAR reference genome for hg38 will need to be built in the directory D
 The rest of the reference and annotation documentation, mostly including bed files, that are necessary for the code as written is available at zenodo.org/XXXXXXXXX, including fasta files for all chromosomes, which make the file quite large. Once this zip file has been downloaded from zenodo into the main DMS-TRAM-seq directory:
 
   ```bash
-  unzip reference_annot.zip # should be located within DMS-TRAM-seq directory, giving DMS-TRAM-seq/reference_annot
+  unzip reference_annot.zip # should be located within DMS-TRAM-seq directory, giving DMS-TRAM-seq/reference_annot/
   ```
 
-Alternatively, you may generate these files yourself as described below:
+## Downloading sample data
 
-Second, reference fasta files for each hg38 chromosome will need to be placed in DMS-TRAM-seq/reference_annot/fasta, named chrN.fa.
+A small sample dataset, subsampled from data presented in the publication, is downloadable from the same Zenodo repository. After downloading into the main DMS-TRAM-seq directory:
+
+  ```bash
+  unzip FASTQ.zip # should be located within DMS-TRAM-seq directory, giving DMS-TRAM-seq/FASTQ/
+  ```
+
+The code as written here includes the names of these samples, and will need to be edited for custom sample names.
 
 ## Installation of this software
   
