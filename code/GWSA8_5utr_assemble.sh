@@ -5,7 +5,6 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=16gb
 #SBATCH --partition=20
-#SBATCH --output /lab/jain_imaging/Kelsey/Sequencing/20210903_NovaSeq/ANALYSIS/jobs/GWSA8_5utr_%j.out
 
 # This script is a control script for genome-wide analysis of DMS-MaPseq
 # data in different conditions, starting with BAM files (i.e. mapped reads)
@@ -32,10 +31,9 @@ sDMS1=AD1
 sDMS2=AD2
 sDMS3=AD3
 
-path=/lab/jain_imaging/Kelsey/Sequencing/20210903_NovaSeq
-codepath=${path}/ANALYSIS/code
-annotpath=${path}/ANALYSIS/reference_annot
-bedGraphpath=${path}/ANALYSIS/bedGraph
+codepath=../code
+annotpath=../reference_annot
+bedGraphpath=../bedGraph
 cd ${bedGraphpath}
 
 # For a set of reference annotations (e.g. complete transcripts, individual
