@@ -15,9 +15,6 @@ echo "Submitted jobs:  ${job_id_list}"
 
 #Second, run a script concatenating all chromosomes and applying pval correction
 job_id_list=${job_id_list::-1} #removes superfluous semicolon at end of string
-join_job_id=$(sbatch --parsable --dependency=afterok:${job_id_list} join_windows.sh ${windowSize}) 
+sbatch --dependency=afterok:${job_id_list} join_windows.sh ${windowSize}
 
 echo "Submitted batch job ${join_job_id}"
-
-#Last, cross-reference with CLIP peaks
-sbatch --dependency=afterok:${join_job_id} bedmap_CLIP.sh ${windowSize}
