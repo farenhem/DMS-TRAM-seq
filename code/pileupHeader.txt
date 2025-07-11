@@ -1,0 +1,1 @@
+locus	chr	pos	ref	type	alt	imf	DP	AD
