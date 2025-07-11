@@ -32,6 +32,15 @@ Though several genomic annotation files are included in this repository that are
 
 First, a STAR reference genome for hg38 will need to be built in the directory DMS-TRAM-seq/reference_annot/STAR_hg38. Please follow instructions in the STAR manual at https://physiology.med.cornell.edu/faculty/skrabanek/lab/angsd/lecture_notes/STARmanual.pdf and the reference geome fasta and gtf files can be downloaded from https://www.gencodegenes.org/human/. Only the primary chromosomes are analyzed, so any hg38 version will suffice. Should you already have this STAR reference hg38 built, you can change the "refpath" variable on line 24 of TrimMapDedupProcess.sh to direct there, instead. 
 
+Example code to generate STAR reference:
+  ```bash
+  STAR --runMode genomeGenerate --genomeDir /DMS-TRAM-seq/reference_annot/STAR_hg38 \
+  --genomeFastaFiles /path_to_GENCODE_download/GRCh38.primary_assembly.genome.fa \
+  --sjdbGTFfile /path_to_GENCODE_download/gencode.v43.primary_assembly.annotation.gtf \
+  --sjdbOverhang 149 # overhang 149 recommended for 150nt reads
+  ```
+
+
 The rest of the reference and annotation documentation, mostly including bed files, that are necessary for the code as written is available at zenodo.org/XXXXXXXXX, including fasta files for all chromosomes, which make the file quite large. Once this zip file has been downloaded from zenodo into the main DMS-TRAM-seq directory:
 
   ```bash
